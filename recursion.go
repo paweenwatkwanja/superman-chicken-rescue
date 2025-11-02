@@ -1,13 +1,10 @@
 package main
 
-import "fmt"
-
-func rescueRecursively(roofSize int, positions []int) int {
+func rescueRecursively(roofSize int, positions []int, maxCover int) int {
 	chickenCount := 0
-	maxCover := 0
 
 	if len(positions) == 1 {
-		return 0
+		return maxCover
 	}
 
 	coverRange := roofSize + positions[0]
@@ -30,6 +27,5 @@ func rescueRecursively(roofSize int, positions []int) int {
 		maxCover = chickenCount
 	}
 
-	fmt.Printf("positions : %v; max cover : %v\n", positions, maxCover)
-	return rescueRecursively(roofSize, positions) + maxCover
+	return rescueRecursively(roofSize, positions, maxCover)
 }
