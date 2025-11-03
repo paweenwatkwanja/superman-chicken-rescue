@@ -1,15 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/paweenwatkwanja/superman-chicken-rescue/internal/solution"
+	"github.com/paweenwatkwanja/superman-chicken-rescue/utils"
+)
 
 func main() {
-	var roofSize int
-	var positions = []int{1}
+	rescueInput := utils.GetInputFromTerminal()
+	err := utils.ValidateInput(rescueInput)
+	if err != nil {
+		panic(err)
+	}
 
-	roofSize = 2
-	// check count of position and n of input
-	// if positions length = 0 no process
-	// first position must not be 0
 	var maxCover int
-	fmt.Println(rescueRecursively(roofSize, positions, maxCover))
+	maxCover = solution.Rescue(rescueInput.RoofSize, rescueInput.Positions, maxCover)
+	fmt.Println(maxCover)
 }

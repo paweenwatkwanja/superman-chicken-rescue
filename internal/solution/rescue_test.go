@@ -1,4 +1,4 @@
-package main
+package solution
 
 import (
 	"fmt"
@@ -20,7 +20,7 @@ func TestRecursionWithProvidedTestCases(t *testing.T) {
 	for i, tc := range testCases {
 		testName := fmt.Sprintf("Test Case %v", i+1)
 		t.Run(testName, func(t *testing.T) {
-			actualMaxCover := rescueRecursively(tc.roofSize, tc.positions, 0)
+			actualMaxCover := Rescue(tc.roofSize, tc.positions, 0)
 
 			assert.Equal(t, tc.expectedMaxCover, actualMaxCover)
 		})
@@ -49,7 +49,7 @@ func TestRecursionWithAdditionalTestCases(t *testing.T) {
 	for i, tc := range testCases {
 		testName := fmt.Sprintf("Test Case %v: %v", i+1, tc.testCaseName)
 		t.Run(testName, func(t *testing.T) {
-			actualMaxCover := rescueRecursively(tc.roofSize, tc.positions, 0)
+			actualMaxCover := Rescue(tc.roofSize, tc.positions, 0)
 
 			assert.Equal(t, tc.expectedMaxCover, actualMaxCover)
 		})

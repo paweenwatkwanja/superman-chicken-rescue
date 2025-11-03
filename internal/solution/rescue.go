@@ -1,6 +1,6 @@
-package main
+package solution
 
-func rescueRecursively(roofSize int, positions []int, maxCover int) int {
+func Rescue(roofSize int, positions []int, maxCover int) int {
 	chickenCount := 0
 
 	if len(positions) == 1 {
@@ -30,5 +30,5 @@ func rescueRecursively(roofSize int, positions []int, maxCover int) int {
 		maxCover = chickenCount
 	}
 
-	return rescueRecursively(roofSize, positions, maxCover)
+	return Rescue(roofSize, positions, maxCover)
 }
