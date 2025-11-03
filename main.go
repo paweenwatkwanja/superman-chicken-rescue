@@ -8,6 +8,8 @@ func main() {
 
 	roofSize = 2
 	// check count of position and n of input
+	// if positions length = 0 no process
+	// first position must not be 0
 	var maxCover int
 	fmt.Println(rescueRecursively(roofSize, positions, maxCover))
 }

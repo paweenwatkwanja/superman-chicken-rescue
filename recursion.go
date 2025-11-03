@@ -4,7 +4,7 @@ func rescueRecursively(roofSize int, positions []int, maxCover int) int {
 	chickenCount := 0
 
 	if len(positions) == 1 {
-		if maxCover == 0 && roofSize != 0 {
+		if roofSize != 0 && maxCover == 0 {
 			return maxCover + 1
 		}
 		return maxCover
