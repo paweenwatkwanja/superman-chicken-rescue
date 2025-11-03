@@ -34,14 +34,13 @@ func TestRecursionWithAdditionalTestCases(t *testing.T) {
 		positions        []int
 		expectedMaxCover int
 	}{
-		{"mutiple positions but all are out of cover range", 5, []int{1, 6, 11, 16, 22}, 1},
+		{"many positions but the next position of each is beyond the roof", 5, []int{1, 6, 11, 16, 22}, 1},
 
-		{"mutiple positions next to each other with roof size 0", 0, []int{1, 2, 3, 4, 5}, 0},
-		{"mutiple positions next to each other with roof size 1", 1, []int{1, 2, 3, 4, 5}, 1},
-		{"mutiple positions next to each other with roof size 2", 2, []int{1, 2, 3, 4, 5}, 2},
+		{"many positions next to each other with roof size 1", 1, []int{1, 2, 3, 4, 5}, 1},
+		{"many positions next to each other with roof size 2", 2, []int{1, 2, 3, 4, 5}, 2},
 
-		{"mutiple positions next to each other with roof size cover the last position", 5, []int{1, 2, 3, 4, 5}, 5},
-		{"mutiple positions next to each other with roof size cover beyond last position", 6, []int{1, 2, 3, 4, 5}, 5},
+		{"many positions next to each other with roof size cover the last position", 5, []int{1, 2, 3, 4, 5}, 5},
+		{"many positions next to each other with roof size cover beyond last position", 6, []int{1, 2, 3, 4, 5}, 5},
 
 		{"one position with roof size greater than 0", 5, []int{1}, 1},
 	}

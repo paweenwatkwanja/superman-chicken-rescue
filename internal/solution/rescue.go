@@ -4,8 +4,8 @@ func Rescue(roofSize int, positions []int, maxCover int) int {
 	chickenCount := 0
 
 	if len(positions) == 1 {
-		if roofSize != 0 && maxCover == 0 {
-			return maxCover + 1
+		if maxCover == 0 {
+			return 1
 		}
 		return maxCover
 	}
@@ -23,7 +23,7 @@ func Rescue(roofSize int, positions []int, maxCover int) int {
 				chickenCount++
 			}
 		}
-		positions = positions[1:]
+		positions = positions[1:] // when done, slice the data from the next one onwards
 	}
 
 	if maxCover < chickenCount {
