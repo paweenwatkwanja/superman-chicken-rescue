@@ -8,14 +8,18 @@
         - run the test
 
 # solution approach
-- As the first solution which comes to my mind is to use iteration approach, that solution uses brute force with nested iteration, resulting in the time complexity of O(n^2). I try to figure how to reduce the time complexity to just O(n). The solution is to use recursion. This reduces the time comlexity from O(n^2) to O(n). However, the trade-off of the recursive approach is that it uses more resources.????????
+- As the first solution which comes to my mind is to use iteration approach, that solution uses brute force with nested iteration, resulting in the time complexity of O(n^2). I try to figure how to reduce the time complexity to just O(n). The solution is to use recursion. This reduces the time comlexity from O(n^2) to O(n). However, the trade-off of the recursive approach is that it uses more resources.
 
 # solution explanation
 - first block (line 6 - 11)
-    - the first 'if' is for overall base case which will stop the recursion.
-    - inside the 'if', there is a base case for the first stack call of an input with len == 1.
+    - the first condition is for a base case which will stop the recursion.
+    - inside the codition, there is another condition checking if it is the first stack call and the length of an input is one. Then stop recursion and return the maxCoveredChicken which is one.
+
 - second block (line 13 - 27)
-    - the rescue steps
+    - the first condition in this section is to check whether the next position is beyond the coverRange or not.
+    - if it is beyond the coverRange, 
+
+
     - the 'if' checks if next position is beyond the coverRange.
     - if yes (no chickens within the coverRange), slice the positions by starting from the next position onwards.
     - if no (execute the loop), check how many chikens are in the coverRange.

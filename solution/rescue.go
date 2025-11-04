@@ -1,13 +1,13 @@
 package solution
 
-func Rescue(roofSize int, positions []int, maxCover int) int {
+func Rescue(roofSize int, positions []int, maxCoveredChicken int) int {
 	chickenCount := 0
 
 	if len(positions) == 1 {
-		if maxCover == 0 {
+		if maxCoveredChicken == 0 {
 			return 1
 		}
-		return maxCover
+		return maxCoveredChicken
 	}
 
 	coverRange := roofSize + positions[0]
@@ -23,12 +23,12 @@ func Rescue(roofSize int, positions []int, maxCover int) int {
 				chickenCount++
 			}
 		}
-		positions = positions[1:] // when done, slice the data from the next one onwards
+		positions = positions[1:]
 	}
 
-	if maxCover < chickenCount {
-		maxCover = chickenCount
+	if maxCoveredChicken < chickenCount {
+		maxCoveredChicken = chickenCount
 	}
 
-	return Rescue(roofSize, positions, maxCover)
+	return Rescue(roofSize, positions, maxCoveredChicken)
 }
